@@ -7,6 +7,8 @@
 :root {
     --ff-heading: 'Staatliches' , sans-serif;
     --ff-texting: 'Palanquin' , sans-serif;
+    --ff-texting-p: 'Roboto' , sans-serif;
+    --ff-footer: 'Open-sans' , sans-serif;
 
     --hue: 218;
     --bg-heading: hsl(var(--hue), 17 , 62 , 100%);
@@ -14,7 +16,7 @@
     --bg-secondary: hsl(312, 91%, 96%);
     --fc-primary: hsl(274, 84%, 12%, 1);
     --fc-secondary:hsl(232, 17%, 35%);
-
+    --fc-header-p: hsla(0, 0%, 100%, 1);
     --fs-body: 2rem;
 }
 
@@ -39,20 +41,22 @@ header ::before {
 }
 
 .page {
-    max-width: 38.4rem;
+
     margin: 0 auto;
     padding: 0;
+
+    max-width: 58.4rem;
 }
 
 
 img {
-    width: 100%;
+    width:100%;
     height: auto;
 }
  
 
 header {
-    margin-top: 3.2rem;
+   
     font-family: var(--ff-heading);
     color:hsl(0, 0%, 100%);
     
@@ -86,15 +90,23 @@ header h1 {
 
 
 p  {
-    margin-top: 1.9em;
+    margin-top: 2.9em;
     margin-bottom: 6.3rem;
     font-size: clamp(1rem, 1rem + 2vw, 2.2rem);
-    
+    font-family: var(--ff-texting);
     
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--fc-primary);  
+}
+
+
+main {
+    margin: 0;
+    max-width: 90.3rem;
+    position: relative;
+    
 }
 
 
@@ -109,12 +121,16 @@ p  {
   
 }
 
+.desktop-card {
+    display:none;
+
+}
 .card img {
     width: 100%;
     margin-bottom: 3.2rem;
     object-fit:cover;
     border-radius: 2.0rem;
-
+    
     animation: downtop 750ms backwards;
 }
 
@@ -145,6 +161,10 @@ p  {
     
 }
 
+footer {
+    display:none;
+}
+
 @keyframes topdown {
     0% {
         opacity: 0;
@@ -168,3 +188,153 @@ p  {
         transform: translateY(0);
     }
 }
+    @media (min-width: 920px) {
+        .page{
+            max-width: 1740rem;
+    
+        }
+    
+        img {
+            width:19.0rem;
+            height: auto;
+            
+        }
+
+        main {
+            grid-template-columns: 1fr 1fr 1fr;
+            padding-top: 2.5rem;
+            margin-left: 44.3rem;
+            width: 22.0rem;
+            display: grid;
+            gap:2.6rem;
+        }
+
+        main {
+            grid-template-areas:"A B C"
+            "E B F "
+            "E D F"
+        }
+        
+        main div:nth-child(1) {
+            grid-area: A;
+        }
+        
+        main div:nth-child(2) {
+            grid-area: B;
+        }
+        
+        main div:nth-child(3) {
+            grid-area: C;
+        }
+        
+        main div:nth-child(4) {
+            grid-area: D;
+        }
+        
+        main div:nth-child(5) {
+            grid-area: E;
+        }
+        
+        main div:nth-child(6) {
+            grid-area: F;
+        }
+
+        header {
+            position: absolute;
+            justify-content: center;
+            left: 0px;  
+            
+            width: 37.7rem;
+            height: 58.6rem;
+
+            font-family: var(--ff-heading);
+            color:hsl(0, 0%, 100%);
+            background: #8E9AAF;
+
+        }
+
+        header p {
+            
+            width: 27.5rem;
+            height: 26.2rem;
+            margin-top: 1.9rem;
+            margin-left: 0.8rem;
+                
+            font-style: normal;
+            font-family: var(--ff-texting-p);
+            font-weight: 400;
+                
+            font-size: 1.8rem;
+            line-height: 2.0rem;
+            text-align: center;
+            line-height: 2.2rem;
+            color: var(--fc-header-p);
+            
+               
+            } 
+
+            h2 {
+                display: none;
+            }
+            
+            .card img {
+                margin-bottom: 0;
+                width: auto;
+                animation: downtop 750ms backwards;
+            }
+
+            .card {
+               
+                display: flex;
+                justify-content: center;
+                position: relative;
+
+                max-width: 44.0rem;
+                padding: 0;
+            }
+          
+
+            .desktop-card {
+                
+                display: flex;
+                justify-content: center;
+                position: relative;
+            
+                max-width: 44.0rem;
+
+                animation: downtop 750ms backwards;
+            }
+
+
+            .card img:hover {
+                transform: scale(1.1);
+
+            }
+
+            .desktop-card img:hover {
+                transform: scale(1.1);
+
+            }
+
+            footer {
+                position: absolute;
+                display: block;
+                height: 2.8rem;
+                width: 53.0rem;
+                margin-top: 2.5rem;
+                left: 64.1rem;
+                
+                font-family: var(--ff-footer);
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1.4rem;
+                
+                color: var(--fc-secondary);
+                animation: downtop 750ms backwards;
+            }
+            
+    }
+    
+    
+    
+   
